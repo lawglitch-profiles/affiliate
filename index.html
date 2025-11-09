@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[[[Affiliate Partner Program - LawGlitch]]]</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Auto-detect favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
     <style>
         :root {
             --gold: #D4AF37;
@@ -542,6 +547,11 @@
                 padding: 30px;
             }
         }
+
+        /* Hide [[[...]]] markers on the webpage */
+        .marker-hider {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -824,6 +834,99 @@
     </footer>
 
     <script>
+        function expandBookingFrame(event) {
+            event.preventDefault();
+            const modal = document.getElementById('bookingModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('bookingModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeBookingModal();
+                    }
+                });
+            }
+            
+            // Hide all [[[...]]] markers on page load
+            hideMarkers();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeBookingModal();
+            }
+        });
+
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+                // Function to hide [[[...]]] markers
+        function hideMarkers() {
+            const MARKER_START = '[[' + '[';
+            const MARKER_END = ']' + ']' + ']';
+            
+            // Process title tag first
+            const title = document.title;
+            if (title.includes(MARKER_START)) {
+                document.title = title.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
+            }
+            
+            // Process all text nodes in the document
+            function processNode(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    if (node.textContent.includes(MARKER_START)) {
+                        node.textContent = node.textContent.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
+                    }
+                } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    // Process input placeholders
+                    if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') {
+                        const placeholder = node.getAttribute('placeholder');
+                        if (placeholder && placeholder.includes(MARKER_START)) {
+                            node.setAttribute('placeholder', placeholder.replace(/\[\[\[(.*?)\]\]\]/g, '$1'));
+                        }
+                    }
+                    // Process option text
+                    if (node.tagName === 'OPTION') {
+                        if (node.textContent.includes(MARKER_START)) {
+                            node.textContent = node.textContent.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
+                        }
+                    }
+                    // Process all child nodes
+                    Array.from(node.childNodes).forEach(processNode);
+                }
+            }
+            
+            processNode(document.body);
+        }
+
+        // Auto-detect favicon fallback
+        (function autoDetectFavicon() {
+            const favicon = document.querySelector('link[rel="icon"]');
+            if (favicon) {
+                // Check if favicon exists
+                const img = new Image();
+                img.onerror = function() {
+                    // If favicon doesn't exist, try to create a default one
+                    console.log('Favicon not found, using default');
+                    // You could create a canvas-based favicon here if needed
+                };
+                img.src = favicon.href;
+            }
+        })();
+
         function handleFormSubmit(event) {
             event.preventDefault();
 
@@ -904,83 +1007,6 @@ We look forward to partnering with you!
                 }
             });
         });
- function expandBookingFrame(event) {
-            event.preventDefault();
-            const modal = document.getElementById('bookingModal');
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeBookingModal() {
-            const modal = document.getElementById('bookingModal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('bookingModal');
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeBookingModal();
-                    }
-                });
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeBookingModal();
-            }
-        });
-
-        document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-        // Strip markers
-        (function stripMarkersTemplate() {
-            const MARKER_START = '[' + '[' + '[';
-            const MARKER_END = ']' + ']' + ']';
-            
-            function stripImageMarkers() {
-                document.querySelectorAll('img[src*="' + MARKER_START + '"]').forEach(img => {
-                    const src = img.getAttribute('src');
-                    if (src && src.startsWith(MARKER_START) && src.endsWith(MARKER_END)) {
-                        const cleanedSrc = src.slice(3, -3);
-                        img.setAttribute('src', cleanedSrc);
-                    }
-                });
-            }
-            
-            function stripLinkMarkers() {
-                document.querySelectorAll('a[href*="' + MARKER_START + '"]').forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href && href.startsWith(MARKER_START) && href.endsWith(MARKER_END)) {
-                        const cleanedHref = href.slice(3, -3);
-                        link.setAttribute('href', cleanedHref);
-                    }
-                });
-            }
-            
-            function processNode(node) {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    if (node.textContent.includes(MARKER_START)) {
-                        node.textContent = node.textContent.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
-                    }
-                } else if (node.nodeType === Node.ELEMENT_NODE) {
-                    if (node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
-                        Array.from(node.childNodes).forEach(processNode);
-                    }
-                }
-            }
-            
-            processNode(document.body);
-            stripImageMarkers();
-            stripLinkMarkers();
-        })();
     </script>
 
 </body>
