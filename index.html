@@ -1,1 +1,910 @@
-[object Object]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[[Affiliate Partner Program - LawGlitch]]]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --cream: #F5F5F0;
+            --black: #1A1A1A;
+            --dark-gray: #333333;
+            --light-gray: #E5E5E5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--black);
+        }
+
+        .logo-highlight {
+            color: var(--gold);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background-color: var(--gold);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            position: relative;
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .earning-highlight {
+            background: linear-gradient(135deg, var(--black) 0%, var(--gold) 50%, var(--black) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textShine {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+        }
+
+        .hero-cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .primary-cta {
+            background-color: var(--gold);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(212,175,55,0.4);
+        }
+
+        .primary-cta:hover {
+            background-color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .secondary-cta {
+            background-color: transparent;
+            color: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        .secondary-cta:hover {
+            background-color: var(--black);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .earnings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .earnings-card {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .earnings-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.2);
+            transform: translateY(-5px);
+        }
+
+        .earnings-card .amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .earnings-card .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .earnings-card .details {
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+            line-height: 1.8;
+        }
+
+        .products-section {
+            background-color: var(--cream);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--cream), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .process-section {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+        }
+
+        .process-section .section-title {
+            color: var(--white);
+        }
+
+        .process-section .section-subtitle {
+            color: var(--light-gray);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gold);
+            color: var(--black);
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--gold);
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--light-gray);
+        }
+
+        .benefits-section {
+            background-color: var(--cream);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .benefit-card p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .signup-section {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--gold);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .form-notice {
+            background-color: #fff3cd;
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 20px;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background-color: #fff3e0;
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h4 {
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-list {
+                gap: 15px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-text">
+                    Law<span class="logo-highlight">Glitch</span>
+                </div>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="#earnings" class="nav-link">[[[Earnings]]]</a></li>
+                        <li><a href="#products" class="nav-link">[[[Products]]]</a></li>
+                        <li><a href="#process" class="nav-link">[[[Process]]]</a></li>
+                        <li><a href="#signup" class="nav-link nav-cta">[[[Join Now]]]</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Earn <span class="earning-highlight">[[[Up to $100+ Per Sale]]]</span>
+                </h1>
+                <p class="hero-subtitle">
+                    [[[Join our global affiliate partnership program and start earning substantial commissions today. No experience needed. We handle the rest.]]]
+                </p>
+                <div class="hero-cta-container">
+                    <a href="#signup" class="cta-button primary-cta">[[[Become an Affiliate Partner]]]</a>
+                    <a href="https://lawglitch.in" class="cta-button secondary-cta" target="_blank">[[[Explore Products]]]</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Earnings Section -->
+    <section id="earnings">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">[[[Multiple Earning Opportunities]]]</h2>
+                <p class="section-subtitle">[[[Choose your path and start earning commissions with every successful sale]]]</p>
+            </div>
+            <div class="earnings-grid">
+                <div class="earnings-card">
+                    <div class="amount">$[[[100]]]</div>
+                    <div class="product-name">[[[Mega Bundle Offer]]]</div>
+                    <div class="details">
+                        <p>Per sale commission on our premium $[[[499]]] + $[[[20]]] annual license bundle</p>
+                        <p style="margin-top: 10px; font-weight: 600; color: var(--gold);">[[[Highest earning potential]]]</p>
+                    </div>
+                </div>
+                <div class="earnings-card">
+                    <div class="amount">20%</div>
+                    <div class="product-name">[[[Individual Products]]]</div>
+                    <div class="details">
+                        <p>Commission on each sale of customized websites, AI extensions & other standalone products</p>
+                        <p style="margin-top: 10px; font-weight: 600; color: var(--gold);">[[[Flexible options]]]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💡 [[[Why This Pays More Than Others]]]</h4>
+                <p>[[[Our premium bundle combines all essential legal tech solutions in one affordable package. Affiliates promoting this standalone product earn $100 per conversion—that's 2-3 times more than typical affiliate programs.]]]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">[[[What You'll Be Selling]]]</h2>
+                <p class="section-subtitle">[[[Premium legal tech solutions trusted by professionals worldwide]]]</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">📦</div>
+                    <div class="product-info">
+                        <h3>[[[Mega Bundle]]]</h3>
+                        <p>[[[Complete legal tech suite including customized websites, AI extensions, and annual licensing—everything your customers need in one premium package.]]]</p>
+                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width: 100%;">[[[View Details]]]</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🌐</div>
+                    <div class="product-info">
+                        <h3>[[[Customized Websites]]]</h3>
+                        <p>[[[Professional, SEO-optimized legal websites designed and deployed specifically for your client's brand and practice areas.]]]</p>
+                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width: 100%;">[[[View Details]]]</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🤖</div>
+                    <div class="product-info">
+                        <h3>[[[AI Legal Extension]]]</h3>
+                        <p>[[[Cutting-edge AI tools that automate document analysis, contract review, and legal research—helping professionals work smarter.]]]</p>
+                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width: 100%;">[[[View Details]]]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">[[[Why Partner With Us]]]</h2>
+                <p class="section-subtitle">[[[Everything you need to succeed]]]</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>[[[Proven Products]]]</h3>
+                    <p>[[[High-converting legal tech solutions with established market demand and customer satisfaction.]]]</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>[[[Marketing Support]]]</h3>
+                    <p>[[[Access to promotional materials, product descriptions, and sales strategies to help you succeed.]]]</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔗</div>
+                    <h3>[[[Unique Payment Links]]]</h3>
+                    <p>[[[Personalized affiliate links and payment tracking via PayPal or Wise—easy commission collection.]]]</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>[[[Global Reach]]]</h3>
+                    <p>[[[Promote worldwide with no geographic restrictions—your customers can be anywhere.]]]</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏰</div>
+                    <h3>[[[Fast Onboarding]]]</h3>
+                    <p>[[[Complete verification process within 24 hours of application submission.]]]</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>[[[Dedicated Support]]]</h3>
+                    <p>[[[Our team is here to help you succeed—responsive support throughout your affiliate journey.]]]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">[[[How The Signup Process Works]]]</h2>
+                <p class="section-subtitle">[[[From application to earning in 4 simple steps]]]</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>[[[Submit Application]]]</h3>
+                    <p>[[[Fill out our simple affiliate form with your basic information and business background. This takes less than 5 minutes.]]]</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>[[[Application Review]]]</h3>
+                    <p>[[[Our team reviews your application within 24 hours. We'll verify your information and assess your fit for the program.]]]</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>[[[Verification Call]]]</h3>
+                    <p>[[[Accepted candidates receive a verification email with a scheduled video call link. We'll discuss your role, expectations, and strategy.]]]</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>[[[Receive Materials]]]</h3>
+                    <p>[[[After verification, you get your affiliate contract, product details, unique payment links (PayPal/Wise), and all marketing materials to start selling.]]]</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 60px; background: rgba(255, 255, 255, 0.1); border-color: var(--gold); color: var(--white);">
+                <h4 style="color: var(--gold);">⏱️ [[[Timeline]]]</h4>
+                <p>[[[Day 1: Submit form | Day 2: Receive verification link | Within 48 hours: Complete video verification | Immediate: Get your unique payment links and start earning!]]]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signup Section -->
+    <section id="signup" class="signup-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">[[[Start Your Affiliate Journey Today]]]</h2>
+                <p class="section-subtitle">[[[Join hundreds of successful affiliate partners. Apply now—approval within 24 hours.]]]</p>
+            </div>
+
+            <div class="form-container">
+                <div class="form-notice">
+                    <strong>⚠️ [[[Important:]]]</strong> [[[Please do not submit duplicate applications. Duplicate submissions will result in immediate disqualification. If you encounter any issues, contact us at contact@lawglitch.in]]]
+                </div>
+
+                <form id="affiliateForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">[[[First Name]]]</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="[[[John]]]" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">[[[Last Name]]]</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="[[[Doe]]]" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">[[[Email Address]]]</label>
+                        <input type="email" id="email" name="email" placeholder="[[[your@email.com]]]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">[[[Phone Number]]]</label>
+                        <input type="tel" id="phone" name="phone" placeholder="[[[+1 (555) 000-0000]]]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">[[[Country]]]</label>
+                        <input type="text" id="country" name="country" placeholder="[[[United States]]]" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessBackground">[[[Business Background / Experience]]]</label>
+                        <textarea id="businessBackground" name="businessBackground" placeholder="[[[Tell us about your business experience and why you want to join our affiliate program...]]]" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="marketingStrategy">[[[How Will You Promote Our Products?]]]</label>
+                        <textarea id="marketingStrategy" name="marketingStrategy" placeholder="[[[Share your marketing channels and strategies (e.g., social media, email list, website, referrals, etc.)]]]" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentMethod">[[[Preferred Payment Method]]]</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="">-- [[[Select Payment Method]]] --</option>
+                            <option value="paypal">[[[PayPal]]]</option>
+                            <option value="wise">[[[Wise]]]</option>
+                            <option value="both">[[[Either PayPal or Wise]]]</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">[[[Submit Application]]]</button>
+                </form>
+
+                <div style="margin-top: 30px; padding: 20px; background-color: #f0f0f0; border-radius: 8px; text-align: center;">
+                    <p style="color: var(--dark-gray); font-size: 0.9rem;">
+                        [[[By submitting this form, you agree to our affiliate terms and conditions. We will contact you within 24 hours.]]]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="color: var(--gold); margin-bottom: 15px;">LawGlitch Affiliate Program</h3>
+                <p>[[[Have questions? We're here to help!]]]</p>
+                <p style="margin-top: 15px;">
+                    📧 <a href="mailto:contact@lawglitch.in" class="footer-link">contact@lawglitch.in</a>
+                </p>
+                <p style="margin-top: 10px;">
+                    🌐 <a href="https://lawglitch.in" class="footer-link" target="_blank">lawglitch.in</a>
+                </p>
+            </div>
+            <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 30px 0;">
+            <p style="font-size: 0.85rem; color: var(--light-gray);">
+                [[[© 2025 LawGlitch. All rights reserved. Affiliate Program Terms & Conditions apply.]]]
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                country: document.getElementById('country').value,
+                businessBackground: document.getElementById('businessBackground').value,
+                marketingStrategy: document.getElementById('marketingStrategy').value,
+                paymentMethod: document.getElementById('paymentMethod').value
+            };
+
+            const telegramMessage = `
+🎯 NEW AFFILIATE APPLICATION
+
+👤 Name: ${formData.firstName} ${formData.lastName}
+📧 Email: ${formData.email}
+📱 Phone: ${formData.phone}
+🌍 Country: ${formData.country}
+
+💼 Business Background:
+${formData.businessBackground}
+
+📢 Marketing Strategy:
+${formData.marketingStrategy}
+
+💳 Preferred Payment: ${formData.paymentMethod.toUpperCase()}
+
+⏰ Submitted: ${new Date().toLocaleString()}
+            `;
+
+            const BOT_TOKEN = "[[[YOUR_TELEGRAM_BOT_TOKEN]]]";
+            const CHAT_ID = "[[[YOUR_TELEGRAM_CHAT_ID]]]";
+            const telegramAPI = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+            if (BOT_TOKEN !== "[[[YOUR_TELEGRAM_BOT_TOKEN]]]" && CHAT_ID !== "[[[YOUR_TELEGRAM_CHAT_ID]]]") {
+                fetch(telegramAPI, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: telegramMessage,
+                        parse_mode: 'HTML'
+                    })
+                }).catch(err => console.log('Telegram notification sent'));
+            }
+
+            alert(`
+✅ Application Submitted Successfully!
+
+Dear ${formData.firstName},
+
+Thank you for your application! We've received your information and will review it within 24 hours.
+
+📧 Check your email (${formData.email}) for:
+• Verification email with video call link
+• Scheduled meeting time
+• Product details and contract
+
+⚠️ IMPORTANT: Do not submit duplicate applications. This will result in disqualification.
+
+If you have any issues, contact us at: contact@lawglitch.in
+
+We look forward to partnering with you!
+            `);
+
+            document.getElementById('affiliateForm').reset();
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
