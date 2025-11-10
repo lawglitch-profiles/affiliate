@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>LawGlitch — Affiliate Partner Program</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[[Affiliate Partner Program - LawGlitch]]]</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome (for fas / fab icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-O8C6b7kq2d9f1QpYJbQ8n6QhVp4h3Z8v9p5q1K0hQ3Gv7s9n2n1qZ4m3R6b1N6c2K8aF1l2Q7e3VqF1X5YKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <!-- Auto-detect favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
+    
     <style>
         :root {
             --gold: #D4AF37;
@@ -232,6 +231,12 @@
             box-shadow: var(--shadow);
         }
 
+        .earnings-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.2);
+            transform: translateY(-5px);
+        }
+
         .earnings-card .amount {
             font-size: 2rem;
             font-weight: 800;
@@ -302,62 +307,56 @@
         }
 
         .process-section {
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
-            color: var(--white);
-        }
-
-        .process-section .section-title {
-            color: var(--white);
-        }
-
-        .process-section .section-subtitle {
-            color: var(--light-gray);
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            color: var(--black);
         }
 
         .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             margin-top: 40px;
         }
 
         .process-step {
-            background: rgba(255, 255, 255, 0.06);
-            padding: 26px;
+            background: var(--white);
+            padding: 30px;
             border-radius: 12px;
             border-left: 4px solid var(--gold);
             transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
         }
 
         .process-step:hover {
-            background: rgba(255, 255, 255, 0.09);
-            transform: translateX(6px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .step-number {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             background-color: var(--gold);
             color: var(--black);
             border-radius: 50%;
             font-weight: 800;
             font-size: 1.2rem;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .process-step h3 {
-            font-size: 1.05rem;
-            margin-bottom: 8px;
-            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--black);
         }
 
         .process-step p {
             font-size: 0.95rem;
             line-height: 1.6;
-            color: var(--light-gray);
+            color: var(--dark-gray);
         }
 
         .benefits-section {
@@ -379,6 +378,12 @@
             display: flex;
             gap: 16px;
             align-items: flex-start;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         .benefit-icon {
@@ -466,6 +471,10 @@
             font-size: 1rem;
             cursor: pointer;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .submit-btn:hover {
@@ -550,10 +559,17 @@
             .form-container {
                 padding: 20px;
             }
+            
+            .benefit-card {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
-        /* Hide marker tokens if present */
-        .marker-hider { display: none; }
+        /* Hide [[[...]]] markers on the webpage */
+        .marker-hider {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -567,286 +583,258 @@
                 </div>
                 <nav>
                     <ul class="nav-list">
-                        <li><a href="#earnings" class="nav-link">Earnings</a></li>
-                        <li><a href="#products" class="nav-link">Products</a></li>
-                        <li><a href="#process" class="nav-link">Process</a></li>
-                        <li><a href="#signup" class="nav-link nav-cta">Join Now</a></li>
+                        <li><a href="#earnings" class="nav-link">[[[Earnings]]]</a></li>
+                        <li><a href="#products" class="nav-link">[[[Products]]]</a></li>
+                        <li><a href="#process" class="nav-link">[[[Process]]]</a></li>
+                        <li><a href="#signup" class="nav-link nav-cta">[[[Join Now]]]</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Earn <span class="earning-highlight">real commissions</span> selling premium legal & business software
+                    [[[Earn]]] <span class="earning-highlight">[[[Up to $100+ Per Sale]]]</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Join LawGlitch as an independent sales partner. Use our ready-made assets, unique payment links and onboarding to start closing deals immediately — no development work, no support burden.
+                    [[[Join our global affiliate partnership program and start earning substantial commissions today. No experience needed. We handle the rest.]]]
                 </p>
                 <div class="hero-cta-container">
-                    <a href="#signup" class="cta-button primary-cta"><i class="fas fa-user-plus"></i> Become an Affiliate Partner</a>
-                    <a href="https://lawglitch.in" class="cta-button secondary-cta" target="_blank"><i class="fas fa-box-open"></i> View Products</a>
+                    <a href="#signup" class="cta-button primary-cta"><i class="fas fa-user-plus"></i> [[[Become an Affiliate Partner]]]</a>
+                    <a href="https://lawglitch.in" class="cta-button secondary-cta" target="_blank"><i class="fas fa-box-open"></i> [[[Explore Products]]]</a>
                 </div>
             </div>
 
-            <div class="container" style="margin-top: 10px;">
-                <div class="earnings-grid" aria-hidden="false">
-                    <div class="earnings-card">
-                        <div class="amount">$100</div>
-                        <div class="product-name">Mega Bundle (one-time)</div>
-                        <div class="details">
-                            <p>Commission per sale for the $499 bundle (AI extension + dynamic site) + $20 annual license.</p>
-                        </div>
+            <div class="earnings-grid">
+                <div class="earnings-card">
+                    <div class="amount">$[[[100]]]</div>
+                    <div class="product-name">[[[Mega Bundle Offer]]]</div>
+                    <div class="details">
+                        <p>[[[Per sale commission on our premium $499 + $20 annual license bundle]]]</p>
+                        <p style="margin-top: 10px; font-weight: 600; color: var(--gold);">[[[Highest earning potential]]]</p>
                     </div>
-
-                    <div class="earnings-card">
-                        <div class="amount">20%</div>
-                        <div class="product-name">Standalone Products</div>
-                        <div class="details">
-                            <p>Commission on single-item sales — websites, AI extension, and add-ons. Flexible and recurring opportunities.</p>
-                        </div>
+                </div>
+                <div class="earnings-card">
+                    <div class="amount">20%</div>
+                    <div class="product-name">[[[Individual Products]]]</div>
+                    <div class="details">
+                        <p>[[[Commission on each sale of customized websites, AI extensions & other standalone products]]]</p>
+                        <p style="margin-top: 10px; font-weight: 600; color: var(--gold);">[[[Flexible options]]]</p>
                     </div>
-
-                    <div class="earnings-card">
-                        <div class="amount">Fast</div>
-                        <div class="product-name">Payouts</div>
-                        <div class="details">
-                            <p>Verified sales processed within 48–72 hours. Choose PayPal or Wise for weekly payouts.</p>
-                        </div>
+                </div>
+                <div class="earnings-card">
+                    <div class="amount">[[[Fast]]]</div>
+                    <div class="product-name">[[[Payouts]]]</div>
+                    <div class="details">
+                        <p>[[[Verified sales processed within 48-72 hours. Choose PayPal or Wise for weekly payouts.]]]</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products -->
+    <!-- Products Section -->
     <section id="products" class="products-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">What You Will Sell</h2>
-                <p class="section-subtitle">High-demand products built for professionals — simple to explain, easy to close.</p>
+                <h2 class="section-title">[[[What You'll Be Selling]]]</h2>
+                <p class="section-subtitle">[[[Premium legal tech solutions trusted by professionals worldwide]]]</p>
             </div>
-
             <div class="products-grid">
-                <div class="product-card" aria-hidden="false">
+                <div class="product-card">
                     <div class="product-image"><i class="fas fa-gift"></i></div>
                     <div class="product-info">
-                        <h3>Mega Bundle — $499 + $20/yr</h3>
-                        <p>All-in-one package: dynamic single-page website, LawGlitch AI Extension Pro, setup and onboarding. Highest commission and easiest close.</p>
-                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width:100%"><i class="fas fa-eye"></i> View Bundle</a>
+                        <h3>[[[Mega Bundle]]]</h3>
+                        <p>[[[Complete legal tech suite including customized websites, AI extensions, and annual licensing—everything your customers need in one premium package.]]]</p>
+                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width: 100%;"><i class="fas fa-eye"></i> [[[View Details]]]</a>
                     </div>
                 </div>
-
                 <div class="product-card">
                     <div class="product-image"><i class="fas fa-laptop-code"></i></div>
                     <div class="product-info">
-                        <h3>Custom Websites — $299 / $599 / $999</h3>
-                        <p>From basic multi-page sites to advanced backend builds. Clear tiers allow you to upsell and increase average order value.</p>
-                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width:100%"><i class="fas fa-list"></i> View Plans</a>
+                        <h3>[[[Customized Websites]]]</h3>
+                        <p>[[[Professional, SEO-optimized legal websites designed and deployed specifically for your client's brand and practice areas.]]]</p>
+                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width: 100%;"><i class="fas fa-list"></i> [[[View Plans]]]</a>
                     </div>
                 </div>
-
                 <div class="product-card">
                     <div class="product-image"><i class="fas fa-robot"></i></div>
                     <div class="product-info">
-                        <h3>AI Extension Pro — $299 + $20/yr</h3>
-                        <p>Privacy-first automation: local OAuth execution, calendar & email automation, spreadsheet updates, and browser commands — no constant running cost required.</p>
-                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width:100%"><i class="fas fa-cogs"></i> Extension Details</a>
+                        <h3>[[[AI Legal Extension]]]</h3>
+                        <p>[[[Cutting-edge AI tools that automate document analysis, contract review, and legal research—helping professionals work smarter.]]]</p>
+                        <a href="https://lawglitch.in" class="cta-button primary-cta" target="_blank" style="width: 100%;"><i class="fas fa-cogs"></i> [[[Extension Details]]]</a>
                     </div>
                 </div>
             </div>
 
-            <div class="highlight-box" style="margin-top: 20px;">
-                <h4>How partners close quickly</h4>
-                <p>Use our 90-second demo video, pre-made messaging, and one-click payment links. We handle delivery and support — you focus on sales.</p>
+            <div class="highlight-box">
+                <h4>💡 [[[How partners close quickly]]]</h4>
+                <p>[[[Use our product details, pre-made messaging, and one-click payment links. We handle delivery and support — you focus on sales.]]]</p>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
+    <!-- Benefits Section -->
     <section class="benefits-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Partner With LawGlitch</h2>
-                <p class="section-subtitle">Everything you need to sell confidently and scale.</p>
+                <h2 class="section-title">[[[Why Partner With Us]]]</h2>
+                <p class="section-subtitle">[[[Everything you need to succeed]]]</p>
             </div>
-
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
                     <div>
-                        <h3>Proven Product</h3>
-                        <p>Products designed for service professionals — easy to explain, high perceived value, low objection rates.</p>
+                        <h3>[[[Proven Products]]]</h3>
+                        <p>[[[High-converting legal tech solutions with established market demand and customer satisfaction.]]]</p>
                     </div>
                 </div>
-
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-bullhorn"></i></div>
                     <div>
-                        <h3>Comprehensive Sales Kit</h3>
-                        <p>Scripts, demo video, social posts, email templates and objection handling — ready to use from day one.</p>
+                        <h3>[[[Product Details]]]</h3>
+                        <p>[[[Access to comprehensive product information, features, and benefits to help you sell effectively.]]]</p>
                     </div>
                 </div>
-
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-link"></i></div>
                     <div>
-                        <h3>Unique Payment Links</h3>
-                        <p>Each partner gets trackable payment links. Submit proof once — payouts are automatic after verification.</p>
+                        <h3>[[[Unique Payment Links]]]</h3>
+                        <p>[[[Personalized affiliate links and payment tracking via PayPal or Wise—easy commission collection.]]]</p>
                     </div>
                 </div>
-
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-globe"></i></div>
                     <div>
-                        <h3>Global Market</h3>
-                        <p>Sell internationally — our platform supports buyers worldwide with multiple payment rails and delivery options.</p>
+                        <h3>[[[Global Reach]]]</h3>
+                        <p>[[[Promote worldwide with no geographic restrictions—your customers can be anywhere.]]]</p>
                     </div>
                 </div>
-
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-clock"></i></div>
                     <div>
-                        <h3>Fast Onboarding</h3>
-                        <p>Apply, e-sign, get assets. Most partners are ready to sell within 24–48 hours.</p>
+                        <h3>[[[Fast Onboarding]]]</h3>
+                        <p>[[[Complete verification process within 24 hours of application submission.]]]</p>
                     </div>
                 </div>
-
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-headset"></i></div>
                     <div>
-                        <h3>Support & Growth</h3>
-                        <p>Dedicated partner support and performance incentives for top sellers.</p>
+                        <h3>[[[Dedicated Support]]]</h3>
+                        <p>[[[Our team is here to help you succeed—responsive support throughout your affiliate journey.]]]</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process -->
+    <!-- Process Section -->
     <section id="process" class="process-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">How the Signup Process Works</h2>
-                <p class="section-subtitle">A friction-free flow: apply, sign, sell, get paid.</p>
+                <h2 class="section-title">[[[How The Signup Process Works]]]</h2>
+                <p class="section-subtitle">[[[From application to earning in 4 simple steps]]]</p>
             </div>
-
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3>Apply (2 minutes)</h3>
-                    <p>Complete the short application form below with contact details and how you plan to promote LawGlitch.</p>
+                    <h3>[[[Submit Application]]]</h3>
+                    <p>[[[Fill out our simple affiliate form with your basic information and business background. This takes less than 5 minutes.]]]</p>
                 </div>
-
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>Quick Review (≤ 24 hrs)</h3>
-                    <p>We validate your submission and confirm fit. Clear applicants proceed to the e-sign step immediately.</p>
+                    <h3>[[[Application Review]]]</h3>
+                    <p>[[[Our team reviews your application within 24 hours. We'll verify your information and assess your fit for the program.]]]</p>
                 </div>
-
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3>Sign Contract (eSign)</h3>
-                    <p>Receive an independent contractor agreement via eSign. Sign electronically — this sets commission terms and compliance rules.</p>
+                    <h3>[[[Receive Materials]]]</h3>
+                    <p>[[[After approval, you get your affiliate contract, product details, unique payment links (PayPal/Wise), and all materials to start selling.]]]</p>
                 </div>
-
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3>Get Your Sales Pack</h3>
-                    <p>After signing you receive: unique payment links, 90s demo, scripts, creatives, FAQs and the partner dashboard access.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h3>Sell — Submit Proof</h3>
-                    <p>When a client pays with your link, upload the transaction screenshot and client info to the partner dashboard. We verify payments automatically.</p>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">6</div>
-                    <h3>Get Paid (48–72 hrs)</h3>
-                    <p>Once verified, commissions are released via your chosen payout method (Wise / PayPal).</p>
+                    <h3>[[[Start Earning]]]</h3>
+                    <p>[[[Begin promoting our products and earn commissions on every successful sale. We handle all customer support and product delivery.]]]</p>
                 </div>
             </div>
 
-            <div class="highlight-box" style="margin-top: 28px;">
-                <h4>Timeline</h4>
-                <p>Apply → Review within 24 hours → eSign → Receive materials → Start selling immediately.</p>
+            <div class="highlight-box" style="margin-top: 60px;">
+                <h4>⏱️ [[[Timeline]]]</h4>
+                <p>[[[Day 1: Submit form | Day 2: Receive approval | Immediate: Get your unique payment links and start earning!]]]</p>
             </div>
         </div>
     </section>
 
-    <!-- Signup -->
+    <!-- Signup Section -->
     <section id="signup" class="signup-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Start Your Affiliate Journey</h2>
-                <p class="section-subtitle">Fill the form — approved partners typically go live within 24–48 hours.</p>
+                <h2 class="section-title">[[[Start Your Affiliate Journey Today]]]</h2>
+                <p class="section-subtitle">[[[Join hundreds of successful affiliate partners. Apply now—approval within 24 hours.]]]</p>
             </div>
 
             <div class="form-container">
                 <div class="form-notice">
-                    <strong>Important:</strong> Do not submit duplicate applications. Duplicate entries delay approval and may result in disqualification. If you face issues, email <a href="mailto:contact@lawglitch.in">contact@lawglitch.in</a>.
+                    <strong>⚠️ [[[Important:]]]</strong> [[[Please do not submit duplicate applications. Duplicate submissions will result in immediate disqualification. If you encounter any issues, contact us at contact@lawglitch.in]]]
                 </div>
 
                 <form id="affiliateForm" onsubmit="handleFormSubmit(event)">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            <label for="firstName">[[[First Name]]]</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="[[[John]]]" required>
                         </div>
                         <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                            <label for="lastName">[[[Last Name]]]</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="[[[Doe]]]" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Business Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@business.com" required>
+                        <label for="email">[[[Email Address]]]</label>
+                        <input type="email" id="email" name="email" placeholder="[[[your@email.com]]]" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Phone / WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input type="text" id="country" name="country" placeholder="United States" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="paymentMethod">Preferred Payout</label>
-                            <select id="paymentMethod" name="paymentMethod" required>
-                                <option value="">-- Select Payment Method --</option>
-                                <option value="paypal">PayPal</option>
-                                <option value="wise">Wise</option>
-                                <option value="both">Either PayPal or Wise</option>
-                            </select>
-                        </div>
+                        <label for="phone">[[[Phone Number]]]</label>
+                        <input type="tel" id="phone" name="phone" placeholder="[[[+1 (555) 000-0000]]]" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="businessBackground">Business Background & Experience</label>
-                        <textarea id="businessBackground" name="businessBackground" placeholder="Briefly describe your sales/marketing experience, client types and channels you will use." required></textarea>
+                        <label for="country">[[[Country]]]</label>
+                        <input type="text" id="country" name="country" placeholder="[[[United States]]]" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="marketingStrategy">How Will You Promote LawGlitch?</label>
-                        <textarea id="marketingStrategy" name="marketingStrategy" placeholder="E.g., LinkedIn outreach, agency clients, email list, paid ads, local partnerships, etc." required></textarea>
+                        <label for="businessBackground">[[[Business Background / Experience]]]</label>
+                        <textarea id="businessBackground" name="businessBackground" placeholder="[[[Tell us about your business experience and why you want to join our affiliate program...]]]" required></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Application</button>
+                    <div class="form-group">
+                        <label for="marketingStrategy">[[[How Will You Promote Our Products?]]]</label>
+                        <textarea id="marketingStrategy" name="marketingStrategy" placeholder="[[[Share your marketing channels and strategies (e.g., social media, email list, website, referrals, etc.)]]]" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentMethod">[[[Preferred Payment Method]]]</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="">-- [[[Select Payment Method]]] --</option>
+                            <option value="paypal">[[[PayPal]]]</option>
+                            <option value="wise">[[[Wise]]]</option>
+                            <option value="both">[[[Either PayPal or Wise]]]</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> [[[Submit Application]]]</button>
                 </form>
 
-                <div style="margin-top: 18px; padding: 14px; background-color: #f0f0f0; border-radius: 8px; text-align: center;">
-                    <p style="color: var(--dark-gray); font-size: 0.95rem;">
-                        By submitting you agree to our Partner Terms. We will contact you within 24 hours with the next steps and eSign link.
+                <div style="margin-top: 30px; padding: 20px; background-color: #f0f0f0; border-radius: 8px; text-align: center;">
+                    <p style="color: var(--dark-gray); font-size: 0.9rem;">
+                        [[[By submitting this form, you agree to our affiliate terms and conditions. We will contact you within 24 hours.]]]
                     </p>
                 </div>
             </div>
@@ -857,14 +845,18 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <h3 style="color: var(--gold); margin-bottom: 12px;">LawGlitch Affiliate Program</h3>
-                <p>Questions? Email our partner team at <a href="mailto:contact@lawglitch.in" class="footer-link">contact@lawglitch.in</a></p>
-                <p style="margin-top: 12px;"><a href="https://lawglitch.in" class="footer-link" target="_blank">lawglitch.in</a></p>
+                <h3 style="color: var(--gold); margin-bottom: 15px;">LawGlitch Affiliate Program</h3>
+                <p>[[[Have questions? We're here to help!]]]</p>
+                <p style="margin-top: 15px;">
+                    📧 <a href="mailto:contact@lawglitch.in" class="footer-link">contact@lawglitch.in</a>
+                </p>
+                <p style="margin-top: 10px;">
+                    🌐 <a href="https://lawglitch.in" class="footer-link" target="_blank">lawglitch.in</a>
+                </p>
             </div>
-
-            <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 20px 0;">
+            <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 30px 0;">
             <p style="font-size: 0.85rem; color: var(--light-gray);">
-                © <span id="footerYear"></span> LawGlitch. All rights reserved. Partner Terms and Conditions apply.
+                [[[© 2025 LawGlitch. All rights reserved. Affiliate Program Terms & Conditions apply.]]]
             </p>
         </div>
     </footer>
@@ -909,7 +901,7 @@
 
         document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-                // Function to hide [[[...]]] markers
+        // Function to hide [[[...]]] markers
         function hideMarkers() {
             const MARKER_START = '[[' + '[';
             const MARKER_END = ']' + ']' + ']';
@@ -996,8 +988,8 @@ ${formData.marketingStrategy}
 ⏰ Submitted: ${new Date().toLocaleString()}
             `;
 
-const BOT_TOKEN = "8559273747:AAGaKXeA_vjLTB4yedGgo_QBSU_xIhD5-zQ";
-const CHAT_ID = "8374420796";
+            const BOT_TOKEN = "8559273747:AAGaKXeA_vjLTB4yedGgo_QBSU_xIhD5-zQ";
+            const CHAT_ID = "8374420796";
             const telegramAPI = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
             if (BOT_TOKEN !== "[[[YOUR_TELEGRAM_BOT_TOKEN]]]" && CHAT_ID !== "[[[YOUR_TELEGRAM_CHAT_ID]]]") {
@@ -1020,9 +1012,9 @@ Dear ${formData.firstName},
 Thank you for your application! We've received your information and will review it within 24 hours.
 
 📧 Check your email (${formData.email}) for:
-• Verification email with video call link
-• Scheduled meeting time
-• Product details and contract
+• Approval confirmation
+• Product details
+• Unique payment links
 
 ⚠️ IMPORTANT: Do not submit duplicate applications. This will result in disqualification.
 
