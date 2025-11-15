@@ -566,7 +566,6 @@
             }
         }
 
-        /* Hide [[[...]]] markers on the webpage */
         .marker-hider {
             display: none;
         }
@@ -862,99 +861,6 @@
     </footer>
 
     <script>
-        function expandBookingFrame(event) {
-            event.preventDefault();
-            const modal = document.getElementById('bookingModal');
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeBookingModal() {
-            const modal = document.getElementById('bookingModal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('bookingModal');
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeBookingModal();
-                    }
-                });
-            }
-            
-            // Hide all [[[...]]] markers on page load
-            hideMarkers();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeBookingModal();
-            }
-        });
-
-        document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-        // Function to hide [[[...]]] markers
-        function hideMarkers() {
-            const MARKER_START = '[[' + '[';
-            const MARKER_END = ']' + ']' + ']';
-            
-            // Process title tag first
-            const title = document.title;
-            if (title.includes(MARKER_START)) {
-                document.title = title.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
-            }
-            
-            // Process all text nodes in the document
-            function processNode(node) {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    if (node.textContent.includes(MARKER_START)) {
-                        node.textContent = node.textContent.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
-                    }
-                } else if (node.nodeType === Node.ELEMENT_NODE) {
-                    // Process input placeholders
-                    if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') {
-                        const placeholder = node.getAttribute('placeholder');
-                        if (placeholder && placeholder.includes(MARKER_START)) {
-                            node.setAttribute('placeholder', placeholder.replace(/\[\[\[(.*?)\]\]\]/g, '$1'));
-                        }
-                    }
-                    // Process option text
-                    if (node.tagName === 'OPTION') {
-                        if (node.textContent.includes(MARKER_START)) {
-                            node.textContent = node.textContent.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
-                        }
-                    }
-                    // Process all child nodes
-                    Array.from(node.childNodes).forEach(processNode);
-                }
-            }
-            
-            processNode(document.body);
-        }
-
-        // Auto-detect favicon fallback
-        (function autoDetectFavicon() {
-            const favicon = document.querySelector('link[rel="icon"]');
-            if (favicon) {
-                // Check if favicon exists
-                const img = new Image();
-                img.onerror = function() {
-                    // If favicon doesn't exist, try to create a default one
-                    console.log('Favicon not found, using default');
-                    // You could create a canvas-based favicon here if needed
-                };
-                img.src = favicon.href;
-            }
-        })();
-
         function handleFormSubmit(event) {
             event.preventDefault();
 
@@ -966,45 +872,34 @@
                 country: document.getElementById('country').value,
                 businessBackground: document.getElementById('businessBackground').value,
                 marketingStrategy: document.getElementById('marketingStrategy').value,
-                paymentMethod: document.getElementById('paymentMethod').value
+                paymentMethod: document.getElementById('paymentMethod').value,
+                submittedAt: new Date().toISOString()
             };
 
-            const telegramMessage = `
-🎯 NEW AFFILIATE APPLICATION
+            const SUPABASE_URL = 'https://pxwbumtpnzbbqzqhnsow.supabase.co';
+            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4d2J1bXRwbnpiYnF6cWhuc293Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyNjM4NTcsImV4cCI6MjA3MzgzOTg1N30.CfDyCEQCCoc4p1KrE_G43ToVGExuVvGAGWk3hMQxf3s';
 
-👤 Name: ${formData.firstName} ${formData.lastName}
-📧 Email: ${formData.email}
-📱 Phone: ${formData.phone}
-🌍 Country: ${formData.country}
+            const payload = {
+                details: JSON.stringify(formData)
+            };
 
-💼 Business Background:
-${formData.businessBackground}
-
-📢 Marketing Strategy:
-${formData.marketingStrategy}
-
-💳 Preferred Payment: ${formData.paymentMethod.toUpperCase()}
-
-⏰ Submitted: ${new Date().toLocaleString()}
-            `;
-
-            const BOT_TOKEN = "8559273747:AAGaKXeA_vjLTB4yedGgo_QBSU_xIhD5-zQ";
-            const CHAT_ID = "8374420796";
-            const telegramAPI = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-
-            if (BOT_TOKEN !== "[[[YOUR_TELEGRAM_BOT_TOKEN]]]" && CHAT_ID !== "[[[YOUR_TELEGRAM_CHAT_ID]]]") {
-                fetch(telegramAPI, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: CHAT_ID,
-                        text: telegramMessage,
-                        parse_mode: 'HTML'
-                    })
-                }).catch(err => console.log('Telegram notification sent'));
-            }
-
-            alert(`
+            fetch(`${SUPABASE_URL}/rest/v1/affiliates`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(`
 ✅ Application Submitted Successfully!
 
 Dear ${formData.firstName},
@@ -1021,10 +916,51 @@ Thank you for your application! We've received your information and will review 
 If you have any issues, contact us at: contact@lawglitch.in
 
 We look forward to partnering with you!
-            `);
-
-            document.getElementById('affiliateForm').reset();
+                `);
+                document.getElementById('affiliateForm').reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('❌ There was an error submitting your application. Please try again or contact us at contact@lawglitch.in');
+            });
         }
+
+        function hideMarkers() {
+            const MARKER_START = '[[' + '[';
+            const MARKER_END = ']' + ']' + ']';
+            
+            const title = document.title;
+            if (title.includes(MARKER_START)) {
+                document.title = title.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
+            }
+            
+            function processNode(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    if (node.textContent.includes(MARKER_START)) {
+                        node.textContent = node.textContent.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
+                    }
+                } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') {
+                        const placeholder = node.getAttribute('placeholder');
+                        if (placeholder && placeholder.includes(MARKER_START)) {
+                            node.setAttribute('placeholder', placeholder.replace(/\[\[\[(.*?)\]\]\]/g, '$1'));
+                        }
+                    }
+                    if (node.tagName === 'OPTION') {
+                        if (node.textContent.includes(MARKER_START)) {
+                            node.textContent = node.textContent.replace(/\[\[\[(.*?)\]\]\]/g, '$1');
+                        }
+                    }
+                    Array.from(node.childNodes).forEach(processNode);
+                }
+            }
+            
+            processNode(document.body);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            hideMarkers();
+        });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
