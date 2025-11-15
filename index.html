@@ -896,9 +896,9 @@
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                return response.json();
+                return response.json().catch(() => ({ ok: true, status: response.status }));
             })
-            .then(data => {
+            .then(result => {
                 alert(`
 ✅ Application Submitted Successfully!
 
